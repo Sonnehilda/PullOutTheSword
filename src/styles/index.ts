@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
+const grass = require("../assets/photos/grass.png");
+
 const GlobalStyle = createGlobalStyle`
 html {
-    background-image: url("https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/63893/grass-clipart-md.png");
+    background-image: url(${grass});
     background-position: 0 70vh;
     background-size: 30vw 30vh;
     background-repeat: repeat-x;
