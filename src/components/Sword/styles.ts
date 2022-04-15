@@ -17,25 +17,25 @@ export const SwordImg = styled.img`
   @keyframes rainbow {
     100%,
     0% {
-      filter: drop-shadow(0 0 0.25vh rgb(255, 0, 0));
+      filter: drop-shadow(0 0 0.75vh rgb(255, 0, 0));
     }
     14% {
-      filter: drop-shadow(0 0 0.25vh rgb(255, 127, 0));
+      filter: drop-shadow(0 0 0.75vh rgb(255, 127, 0));
     }
     28% {
-      filter: drop-shadow(0 0 0.25vh rgb(255, 255, 0));
+      filter: drop-shadow(0 0 0.75vh rgb(255, 255, 0));
     }
     43% {
-      filter: drop-shadow(0 0 0.25vh rgb(0, 255, 0));
+      filter: drop-shadow(0 0 0.75vh rgb(0, 255, 0));
     }
     57% {
-      filter: drop-shadow(0 0 0.25vh rgb(0, 127, 255));
+      filter: drop-shadow(0 0 0.75vh rgb(0, 127, 255));
     }
     72% {
-      filter: drop-shadow(0 0 0.25vh rgb(0, 0, 255));
+      filter: drop-shadow(0 0 0.75vh rgb(0, 0, 255));
     }
     86% {
-      filter: drop-shadow(0 0 0.25vh rgb(127, 0, 255));
+      filter: drop-shadow(0 0 0.75vh rgb(127, 0, 255));
     }
   }
   animation: rainbow 3s linear infinite;
@@ -49,7 +49,7 @@ export const StoneImg = styled.img`
 
   height: 25vh;
 
-  filter: drop-shadow(0 0 0.25vh #000);
+  filter: drop-shadow(0 0.25vh 0.25vh #000);
 `;
 
 export const ShineImg = styled.img`

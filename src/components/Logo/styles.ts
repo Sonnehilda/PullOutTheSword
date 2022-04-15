@@ -11,14 +11,16 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   font-size: 8vh;
-  color: #bdcf88;
+  color: #d9f489;
 
-  filter: brightness(90%);
+  filter: brightness(125%) drop-shadow(0 0 0.5vh #aaa)
+    drop-shadow(0 0 2vh #bdcf88);
 `;
 
 export const SubTitle = styled.div`
   font-size: 6vh;
-  color: #d9f489;
+  color: #edfead;
 
-  filter: brightness(90%);
+  filter: brightness(100%) drop-shadow(0 0 0.5vh #aaa)
+    drop-shadow(0 0 2vh #bdcf88);
 `;

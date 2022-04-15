@@ -1,13 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
-const grass = require("../assets/photos/grass.png");
+import { grass, cloud } from "../assets/images/index";
 
 const GlobalStyle = createGlobalStyle`
 html {
-    background-image: url(${grass});
-    background-position: 0 70vh;
-    background-size: 30vw 30vh;
-    background-repeat: repeat-x;
+    background-image: url(${grass}), url(${cloud});
+    background-position: 0 70vh, 0 0vh;
+    background-size: 30vw 30vh, 100vw 60vh;
+    background-repeat: repeat-x, no-repeat;
     background-color: #EDFEAD;
     
     margin: 0;
