@@ -1,9 +1,26 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+
+  width: max-content;
+  height: 50vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 4;
+  transition: filter 0.25s;
+  cursor: pointer;
+
+  :hover {
+    filter: brightness(125%);
+  }
 `;
 
 export const SwordImg = styled.img`
@@ -13,6 +30,8 @@ export const SwordImg = styled.img`
   bottom: 0;
 
   height: 50vh;
+
+  z-index: 1;
 
   @keyframes rainbow {
     100%,
@@ -49,6 +68,7 @@ export const StoneImg = styled.img`
 
   height: 25vh;
 
+  z-index: 2;
   filter: drop-shadow(0 0.25vh 0.25vh #000);
 `;
 
@@ -59,6 +79,7 @@ export const ShineImg = styled.img`
 
   height: 25vh;
 
+  z-index: 3;
   filter: drop-shadow(0 0 0.5vh #fff);
 
   @keyframes rotate {
