@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+interface PullVisibleProps {
+  pullVisible: boolean;
+}
+
+export const Wrapper = styled.div<PullVisibleProps>`
   transform: translateY(5vh);
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  transition: opacity 1.5s;
+  ${(props) => props.pullVisible === true && "opacity: 0;"};
 `;
 
 export const Title = styled.div`

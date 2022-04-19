@@ -1,10 +1,14 @@
 import * as S from "./styles";
 
-const Logo = () => {
+interface LogoProps {
+  pullVisible: boolean;
+}
+
+const Logo = ({ pullVisible }: LogoProps) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper pullVisible={pullVisible}>
       <S.SubTitle>Feeling lucky?</S.SubTitle>
-      <S.Title>Pull Out The Sword!</S.Title>
+      <S.Title>Pull The Sword Out!</S.Title>
     </S.Wrapper>
   );
 };
