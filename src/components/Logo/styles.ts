@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface PullVisibleProps {
-  pullVisible: boolean;
+interface pullStateProps {
+  pullState: boolean;
 }
 
-export const Wrapper = styled.div<PullVisibleProps>`
+export const Wrapper = styled.div<pullStateProps>`
   transform: translateY(5vh);
 
   display: flex;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div<PullVisibleProps>`
   align-items: center;
 
   transition: opacity 1.5s;
-  ${(props) => props.pullVisible === true && "opacity: 0;"};
+  ${(props) => props.pullState === true && "opacity: 0;"};
 `;
 
 export const Title = styled.div`

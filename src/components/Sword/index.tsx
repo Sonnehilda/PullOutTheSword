@@ -1,19 +1,34 @@
 import * as S from "./styles";
 
-import { sword, stone, shine, light } from "../../assets/images/index";
-import { useState } from "react";
+import StoneImg from "./Background/StoneImg";
+import ShineImg from "./Background/ShineImg";
+import SwordImg from "./Background/SwordImg";
+import LightImg from "./Background/LightImg";
+import WindsImg from "./Background/WindsImg";
 
 interface SwordProps {
-  pullVisible: boolean;
-  setPullVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  period: number;
+  random: number;
+  pulled: boolean;
+  pullState: boolean;
+  setPullState: React.Dispatch<React.SetStateAction<boolean>>;
+  setPulled: React.Dispatch<React.SetStateAction<boolean>>;
+  setPeriod: React.Dispatch<React.SetStateAction<number>>;
+  setRandom: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Sword = ({ pullVisible, setPullVisible }: SwordProps) => {
-  const [period, setPeriod] = useState<number>(0.8);
-
+const Sword = ({
+  pulled,
+  period,
+  setPeriod,
+  random,
+  setRandom,
+  pullState,
+  setPullState,
+}: SwordProps) => {
   const pullSword = () => {
-    if (pullVisible === false) {
-      setPullVisible(true);
+    if (pullState === false) {
+      setPullState(true);
 
       const interval = setInterval(() => {
         setPeriod((period) => period + 0.125);
@@ -22,24 +37,22 @@ const Sword = ({ pullVisible, setPullVisible }: SwordProps) => {
       setTimeout(() => {
         clearInterval(interval);
         setPeriod(0.8);
-        setPullVisible(false);
-      }, 4000);
+
+        setRandom(Math.floor(Math.random() * (1 - 1 + 1)) + 1);
+        setPullState(false);
+      }, 4500);
     }
   };
 
   return (
     <>
-      <S.Wrapper pullVisible={pullVisible} onClick={pullSword}>
-        <S.SwordImg
-          pullVisible={pullVisible}
-          period={period}
-          src={sword}
-        ></S.SwordImg>
-        <S.StoneImg pullVisible={pullVisible} src={stone}></S.StoneImg>
-        <S.ShineImg pullVisible={pullVisible} src={shine}></S.ShineImg>
-        <S.LightImg pullVisible={pullVisible} src={light}></S.LightImg>
+      <S.Wrapper pullState={pullState} onClick={pullSword}>
+        <WindsImg random={random} pullState={pullState} />
+        <SwordImg random={random} pullState={pullState} period={period} />
+        <StoneImg random={random} pullState={pullState} />
+        <ShineImg pullState={pullState} />
+        <LightImg pullState={pullState} />
       </S.Wrapper>
-      <S.WhiteScreen pullVisible={pullVisible} />
     </>
   );
 };
