@@ -2,15 +2,15 @@ import * as S from "./styles";
 import { sword } from "../../../../assets/images/index";
 
 interface SwordProps {
-  random: number;
+  pulled: boolean;
   pullState: boolean;
   period: number;
 }
 
-const SwordImg = ({ random, pullState, period }: SwordProps) => {
+const SwordImg = ({ pulled, pullState, period }: SwordProps) => {
   return (
     <S.SwordImg
-      random={random}
+      pulled={pulled}
       pullState={pullState}
       period={period}
       src={sword}

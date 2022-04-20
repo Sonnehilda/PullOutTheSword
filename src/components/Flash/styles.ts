@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface DefaultProps {
-  random: number;
+  pulled: boolean;
   pullState: boolean;
 }
 
@@ -30,7 +30,7 @@ export const Flash = styled.img<DefaultProps>`
     props.pullState === true
       ? "opacity: 1; transition: opacity 4s ease-in; z-index: 2;"
       : (props) =>
-          props.random.toString() === process.env.REACT_APP_KEY
+          props.pulled === true
             ? "opacity: 0; transition: opacity 8s linear; animation: tempFocus 8s;"
             : "opacity: 0; transition: opacity 1s linear; animation: tempFocus 1s;"}
 `;

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 interface StoneImgProps {
-  random: number;
   pullState: boolean;
 }
 

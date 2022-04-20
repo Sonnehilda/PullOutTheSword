@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 interface WindsImgProps {
-  random: number;
-  pullState: boolean;
+  pulled: boolean;
 }
 
 export const WindsImg = styled.img<WindsImgProps>`
@@ -27,8 +26,5 @@ export const WindsImg = styled.img<WindsImgProps>`
     }
   }
 
-  ${(props) =>
-    props.pullState === true &&
-    props.random.toString() === process.env.REACT_APP_KEY &&
-    "animation: tempVisible 0.6s;"};
+  ${(props) => props.pulled === true && "animation: tempVisible 0.6s;"};
 `;

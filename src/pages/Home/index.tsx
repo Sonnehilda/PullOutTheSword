@@ -7,18 +7,12 @@ import Flash from "../../components/Flash";
 function Home() {
   const [pullState, setPullState] = useState<boolean>(false);
   const [pulled, setPulled] = useState<boolean>(false);
-  const [period, setPeriod] = useState<number>(0.8);
-  const [random, setRandom] = useState<number>(0);
 
   return (
     <>
-      <Logo pullState={pullState} />
-      <Flash random={random} pullState={pullState} />
+      <Logo pulled={pulled} pullState={pullState} />
+      <Flash pulled={pulled} pullState={pullState} />
       <Sword
-        period={period}
-        setPeriod={setPeriod}
-        random={random}
-        setRandom={setRandom}
         pulled={pulled}
         setPulled={setPulled}
         pullState={pullState}

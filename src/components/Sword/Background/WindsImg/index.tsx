@@ -2,12 +2,11 @@ import * as S from "./styles";
 import { winds } from "../../../../assets/images";
 
 interface WindsProps {
-  random: number;
-  pullState: boolean;
+  pulled: boolean;
 }
 
-const WindsImg = ({ random, pullState }: WindsProps) => {
-  return <S.WindsImg random={random} pullState={pullState} src={winds} />;
+const WindsImg = ({ pulled }: WindsProps) => {
+  return <S.WindsImg pulled={pulled} src={winds} />;
 };
 
 export default WindsImg;

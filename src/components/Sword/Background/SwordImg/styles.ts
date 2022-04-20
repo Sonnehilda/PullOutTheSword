@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface SwordProps {
-  random: number;
+  pulled: boolean;
   pullState: boolean;
   period: number;
 }

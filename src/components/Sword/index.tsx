@@ -5,27 +5,18 @@ import ShineImg from "./Background/ShineImg";
 import SwordImg from "./Background/SwordImg";
 import LightImg from "./Background/LightImg";
 import WindsImg from "./Background/WindsImg";
+import { useState } from "react";
 
 interface SwordProps {
-  period: number;
-  random: number;
-  pulled: boolean;
   pullState: boolean;
+  pulled: boolean;
   setPullState: React.Dispatch<React.SetStateAction<boolean>>;
   setPulled: React.Dispatch<React.SetStateAction<boolean>>;
-  setPeriod: React.Dispatch<React.SetStateAction<number>>;
-  setRandom: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Sword = ({
-  pulled,
-  period,
-  setPeriod,
-  random,
-  setRandom,
-  pullState,
-  setPullState,
-}: SwordProps) => {
+const Sword = ({ pullState, setPullState, pulled, setPulled }: SwordProps) => {
+  const [period, setPeriod] = useState<number>(0.8);
+
   const pullSword = () => {
     if (pullState === false) {
       setPullState(true);
@@ -38,7 +29,9 @@ const Sword = ({
         clearInterval(interval);
         setPeriod(0.8);
 
-        setRandom(Math.floor(Math.random() * (1 - 1 + 1)) + 1);
+        const r = Math.floor(Math.random() * (1 - 1 + 1)) + 1;
+        if (r.toString() === process.env.REACT_APP_KEY) setPulled(true);
+
         setPullState(false);
       }, 4500);
     }
@@ -47,9 +40,9 @@ const Sword = ({
   return (
     <>
       <S.Wrapper pullState={pullState} onClick={pullSword}>
-        <WindsImg random={random} pullState={pullState} />
-        <SwordImg random={random} pullState={pullState} period={period} />
-        <StoneImg random={random} pullState={pullState} />
+        <WindsImg pulled={pulled} />
+        <SwordImg pulled={pulled} pullState={pullState} period={period} />
+        <StoneImg pullState={pullState} />
         <ShineImg pullState={pullState} />
         <LightImg pullState={pullState} />
       </S.Wrapper>
