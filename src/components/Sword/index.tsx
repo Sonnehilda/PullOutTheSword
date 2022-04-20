@@ -5,7 +5,6 @@ import ShineImg from "./Background/ShineImg";
 import SwordImg from "./Background/SwordImg";
 import LightImg from "./Background/LightImg";
 import WindsImg from "./Background/WindsImg";
-import { useState } from "react";
 
 interface SwordProps {
   pullState: boolean;
@@ -15,35 +14,18 @@ interface SwordProps {
 }
 
 const Sword = ({ pullState, setPullState, pulled, setPulled }: SwordProps) => {
-  const [period, setPeriod] = useState<number>(0.8);
-
-  const pullSword = () => {
-    if (pullState === false) {
-      setPullState(true);
-
-      const interval = setInterval(() => {
-        setPeriod((period) => period + 0.125);
-      }, 200);
-
-      setTimeout(() => {
-        clearInterval(interval);
-        setPeriod(0.8);
-
-        const r = Math.floor(Math.random() * (1 - 1 + 1)) + 1;
-        if (r.toString() === process.env.REACT_APP_KEY) setPulled(true);
-
-        setPullState(false);
-      }, 4500);
-    }
-  };
-
   return (
     <>
-      <S.Wrapper pullState={pullState} onClick={pullSword}>
+      <S.Wrapper>
         <WindsImg pulled={pulled} />
-        <SwordImg pulled={pulled} pullState={pullState} period={period} />
+        <SwordImg
+          pulled={pulled}
+          pullState={pullState}
+          setPullState={setPullState}
+          setPulled={setPulled}
+        />
         <StoneImg pullState={pullState} />
-        <ShineImg pullState={pullState} />
+        <ShineImg pulled={pulled} pullState={pullState} />
         <LightImg pullState={pullState} />
       </S.Wrapper>
     </>

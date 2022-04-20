@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-interface WrapperProps {
-  pullState: boolean;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div`
   position: absolute;
 
   left: 50%;
@@ -20,7 +16,4 @@ export const Wrapper = styled.div<WrapperProps>`
 
   z-index: 1;
   transition: filter 0.25s;
-
-  ${(props) =>
-    !props.pullState && "cursor: pointer; :hover { filter: brightness(125%); }"}
 `;

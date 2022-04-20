@@ -15,16 +15,20 @@ export const WindsImg = styled.img<WindsImgProps>`
 
   z-index: 1;
 
-  filter: drop-shadow(0 0 1vh #fff);
+  filter: drop-shadow(0 0 2vh #fff);
 
-  @keyframes tempVisible {
-    from {
+  @keyframes windTimeout {
+    0%,
+    44% {
+      visibility: hidden;
+    }
+    45% {
       visibility: visible;
     }
-    to {
+    65% {
       visibility: hidden;
     }
   }
 
-  ${(props) => props.pulled === true && "animation: tempVisible 0.6s;"};
+  ${(props) => props.pulled === true && "animation: windTimeout 3.5s"};
 `;

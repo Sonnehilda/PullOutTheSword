@@ -10,7 +10,7 @@ export const SwordImg = styled.img<SwordProps>`
   position: absolute;
   bottom: 0;
 
-  margin-left: -1.5vh;
+  margin-right: 1.5vh;
 
   height: 50vh;
 
@@ -78,8 +78,33 @@ export const SwordImg = styled.img<SwordProps>`
   animation: rainbow 6s linear infinite;
 
   ${(props) =>
+    !props.pullState && "cursor: pointer; :hover { filter: brightness(125%); }"}
+
+  ${(props) =>
     props.pullState === true &&
     `animation: shake 0.5s linear infinite, rainbow ${
       6 - props.period
     }s linear infinite;`}
+
+  @keyframes pullOut {
+    0%,
+    25% {
+      transform: rotate(0deg);
+      bottom: 0vh;
+      margin-left: 0vh;
+    }
+    50% {
+      transform: rotate(0deg);
+      bottom: 32.5vh;
+      margin-left: 0vh;
+    }
+    75% {
+      transform: rotate(180deg);
+      margin-left: 5vh;
+    }
+  }
+
+  ${(props) =>
+    props.pulled === true &&
+    "margin-left: 5vh; bottom: 32.5vh; transform: rotate(180deg); animation: rainbow 6s linear infinite, pullOut 6s ease-out;"}
 `;

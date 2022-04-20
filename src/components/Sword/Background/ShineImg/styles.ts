@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 interface ShineImgProps {
+  pulled: boolean;
   pullState: boolean;
 }
 
