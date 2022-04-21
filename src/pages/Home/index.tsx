@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <>
-      {pulled === false && <Logo pulled={pulled} pullState={pullState} />}
+      <Logo pulled={pulled} pullState={pullState} />
       <Flash pulled={pulled} pullState={pullState} />
       <Sword
         pulled={pulled}

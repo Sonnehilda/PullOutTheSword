@@ -8,8 +8,17 @@ interface LogoProps {
 const Logo = ({ pullState, pulled }: LogoProps) => {
   return (
     <S.Wrapper pullState={pullState}>
-      <S.SubTitle>Feeling lucky?</S.SubTitle>
-      <S.Title>Pull The Sword Out!</S.Title>
+      {pulled === false ? (
+        <>
+          <S.SubTitle>Feeling lucky?</S.SubTitle>
+          <S.Title>Pull The Sword Out!</S.Title>
+        </>
+      ) : (
+        <>
+          <S.SubTitle>Congratulations!</S.SubTitle>
+          <S.Title>You Pulled The Sword Out!</S.Title>
+        </>
+      )}
     </S.Wrapper>
   );
 };

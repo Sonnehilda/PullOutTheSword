@@ -6,15 +6,6 @@ interface ShineImgProps {
 }
 
 export const ShineImg = styled.img<ShineImgProps>`
-  position: absolute;
-
-  bottom: 5.5vh;
-
-  height: 25vh;
-
-  transition: opacity 1.5s;
-  filter: drop-shadow(0 0 0.5vh #fff);
-
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -24,7 +15,16 @@ export const ShineImg = styled.img<ShineImgProps>`
     }
   }
 
+  position: absolute;
+
+  bottom: 5.5vh;
+
+  height: 25vh;
+
+  transition: opacity 1.5s;
   animation: rotate 10s linear infinite;
 
   ${(props) => props.pullState === true && "opacity: 0;"}
+
+  ${(props) => props.pulled === true && "bottom: 62.5vh; left: -11.5vh;"}
 `;

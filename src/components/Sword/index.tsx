@@ -4,7 +4,6 @@ import StoneImg from "./Background/StoneImg";
 import ShineImg from "./Background/ShineImg";
 import SwordImg from "./Background/SwordImg";
 import LightImg from "./Background/LightImg";
-import WindsImg from "./Background/WindsImg";
 
 interface SwordProps {
   pullState: boolean;
@@ -17,7 +16,6 @@ const Sword = ({ pullState, setPullState, pulled, setPulled }: SwordProps) => {
   return (
     <>
       <S.Wrapper>
-        <WindsImg pulled={pulled} />
         <SwordImg
           pulled={pulled}
           pullState={pullState}

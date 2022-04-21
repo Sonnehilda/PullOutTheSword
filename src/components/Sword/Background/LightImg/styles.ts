@@ -18,7 +18,6 @@ export const LightImg = styled.img<LightImgProps>`
   z-index: 3;
 
   transition: opacity 1s linear;
-  filter: drop-shadow(0 0 0.5vh #ffff00);
   animation: rotate 5s linear infinite;
 
   ${(props) =>

@@ -3,17 +3,9 @@ import styled from "styled-components";
 interface SwordProps {
   pulled: boolean;
   pullState: boolean;
-  period: number;
 }
 
 export const SwordImg = styled.img<SwordProps>`
-  position: absolute;
-  bottom: 0;
-
-  margin-right: 1.5vh;
-
-  height: 50vh;
-
   @keyframes rainbow {
     100%,
     0% {
@@ -75,17 +67,6 @@ export const SwordImg = styled.img<SwordProps>`
     }
   }
 
-  animation: rainbow 6s linear infinite;
-
-  ${(props) =>
-    !props.pullState && "cursor: pointer; :hover { filter: brightness(125%); }"}
-
-  ${(props) =>
-    props.pullState === true &&
-    `animation: shake 0.5s linear infinite, rainbow ${
-      6 - props.period
-    }s linear infinite;`}
-
   @keyframes pullOut {
     0%,
     25% {
@@ -95,7 +76,7 @@ export const SwordImg = styled.img<SwordProps>`
     }
     50% {
       transform: rotate(0deg);
-      bottom: 32.5vh;
+      bottom: 25vh;
       margin-left: 0vh;
     }
     75% {
@@ -104,7 +85,24 @@ export const SwordImg = styled.img<SwordProps>`
     }
   }
 
+  position: absolute;
+  bottom: 0;
+
+  margin-right: 1.5vh;
+
+  height: 50vh;
+
+  filter: drop-shadow(0 0 0.5vh #000);
+
+  ${(props) =>
+    !props.pullState &&
+    !props.pulled &&
+    "cursor: pointer; :hover { filter: brightness(125%) drop-shadow(0 0 0.5vh #000); }"}
+
+  ${(props) =>
+    props.pullState === true && `animation: shake 0.5s linear infinite;`}
+  
   ${(props) =>
     props.pulled === true &&
-    "margin-left: 5vh; bottom: 32.5vh; transform: rotate(180deg); animation: rainbow 6s linear infinite, pullOut 6s ease-out;"}
+    "margin-left: 5vh; bottom: 25vh; transform: rotate(180deg); animation: rainbow 6s linear infinite, pullOut 6s ease-out;"}
 `;
