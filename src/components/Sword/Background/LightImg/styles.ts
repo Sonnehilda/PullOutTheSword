@@ -22,5 +22,5 @@ export const LightImg = styled.img<LightImgProps>`
 
   ${(props) =>
     props.pullState === true &&
-    "visibility: visible; opacity: 1; transition: opacity 4s ease-in;"}
+    "visibility: visible; opacity: 1; transition: opacity 6s ease-in;"}
 `;

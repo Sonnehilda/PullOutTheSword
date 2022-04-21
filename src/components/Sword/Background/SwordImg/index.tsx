@@ -19,7 +19,7 @@ const SwordImg = ({
       setPullState(true);
 
       setTimeout(() => {
-        const r = Math.floor(Math.random() * (1 - 1 + 1)) + 1;
+        const r = Math.floor(Math.random() * (2 - 1 + 1)) + 1;
         if (r.toString() === process.env.REACT_APP_KEY) setPulled(true);
 
         setPullState(false);

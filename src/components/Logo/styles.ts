@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 interface pullStateProps {
+  pulled: boolean;
   pullState: boolean;
 }
 
@@ -14,6 +15,7 @@ export const Wrapper = styled.div<pullStateProps>`
 
   transition: opacity 1.5s;
   ${(props) => props.pullState === true && "opacity: 0;"};
+  ${(props) => props.pulled === true && "transition: opacity 8s;"}
 `;
 
 export const Title = styled.div`

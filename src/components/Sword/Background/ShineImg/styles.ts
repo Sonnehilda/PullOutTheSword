@@ -15,6 +15,16 @@ export const ShineImg = styled.img<ShineImgProps>`
     }
   }
 
+  @keyframes tempInvisible {
+    0%,
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   position: absolute;
 
   bottom: 5.5vh;
@@ -26,5 +36,7 @@ export const ShineImg = styled.img<ShineImgProps>`
 
   ${(props) => props.pullState === true && "opacity: 0;"}
 
-  ${(props) => props.pulled === true && "bottom: 62.5vh; left: -11.5vh;"}
+  ${(props) =>
+    props.pulled === true &&
+    "animation: tempInvisible 5.5s, rotate 10s linear infinite; bottom: 62.5vh; left: -11.5vh;"}
 `;

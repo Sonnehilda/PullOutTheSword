@@ -76,7 +76,7 @@ export const SwordImg = styled.img<SwordProps>`
     }
     50% {
       transform: rotate(0deg);
-      bottom: 25vh;
+      bottom: 24.5vh;
       margin-left: 0vh;
     }
     75% {
@@ -104,5 +104,5 @@ export const SwordImg = styled.img<SwordProps>`
   
   ${(props) =>
     props.pulled === true &&
-    "margin-left: 5vh; bottom: 25vh; transform: rotate(180deg); animation: rainbow 6s linear infinite, pullOut 6s ease-out;"}
+    "margin-left: 5vh; bottom: 24.5vh; transform: rotate(180deg); animation: rainbow 6s linear infinite, pullOut 6s ease-out;"}
 `;

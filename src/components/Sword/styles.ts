@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
 
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
+  bottom: 0vh;
 
   width: max-content;
   height: 50vh;

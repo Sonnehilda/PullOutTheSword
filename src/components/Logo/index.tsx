@@ -7,7 +7,7 @@ interface LogoProps {
 
 const Logo = ({ pullState, pulled }: LogoProps) => {
   return (
-    <S.Wrapper pullState={pullState}>
+    <S.Wrapper pulled={pulled} pullState={pullState}>
       {pulled === false ? (
         <>
           <S.SubTitle>Feeling lucky?</S.SubTitle>
